@@ -1,0 +1,30 @@
+{
+  "agent_name": "Loan Submission Agent",
+  "agent_id": "69a03c49c5e9762927678a57",
+  "description": "Takes the reviewed and approved loan offer along with all customer/vehicle data and submits it to the loan processing system. Confirms successful submission and returns a reference/application ID.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "application_reference_id": "string",
+    "submission_timestamp": "string",
+    "status": "string",
+    "customer_name": "string",
+    "vehicle_description": "string",
+    "approved_loan_amount": "number",
+    "monthly_emi": "number",
+    "tenure_months": "number",
+    "confirmation_message": "string"
+  },
+  "example_response": {
+    "application_reference_id": "sample string",
+    "submission_timestamp": "sample string",
+    "status": "sample string",
+    "customer_name": "sample string",
+    "vehicle_description": "sample string",
+    "approved_loan_amount": 0,
+    "monthly_emi": 0,
+    "tenure_months": 0,
+    "confirmation_message": "sample string"
+  }
+}

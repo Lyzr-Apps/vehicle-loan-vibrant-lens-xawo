@@ -1,0 +1,18 @@
+{
+  "agent_name": "Loan Submission Agent",
+  "agent_id": "69a03c49c5e9762927678a57",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "response_schema": {
+    "application_reference_id": { "type": "string" },
+    "submission_timestamp": { "type": "string" },
+    "status": { "type": "string" },
+    "customer_name": { "type": "string" },
+    "vehicle_description": { "type": "string" },
+    "approved_loan_amount": { "type": "number" },
+    "monthly_emi": { "type": "number" },
+    "tenure_months": { "type": "number" },
+    "confirmation_message": { "type": "string" }
+  }
+}

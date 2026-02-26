@@ -1,0 +1,26 @@
+{
+  "agent_name": "Loan Calculation Agent",
+  "agent_id": "69a03c4946d462ee9ae7050a",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "response_schema": {
+    "customer_name": { "type": "string" },
+    "vehicle_description": { "type": "string" },
+    "vehicle_value": { "type": "number" },
+    "down_payment": { "type": "number" },
+    "down_payment_percentage": { "type": "number" },
+    "eligible_loan_amount": { "type": "number" },
+    "desired_loan_amount": { "type": "number" },
+    "approved_loan_amount": { "type": "number" },
+    "interest_rate": { "type": "number" },
+    "tenure_months": { "type": "number" },
+    "monthly_emi": { "type": "number" },
+    "total_interest": { "type": "number" },
+    "total_payable": { "type": "number" },
+    "eligibility_status": { "type": "string" },
+    "eligibility_reason": { "type": "string" },
+    "income_to_emi_ratio": { "type": "number" },
+    "summary": { "type": "string" }
+  }
+}

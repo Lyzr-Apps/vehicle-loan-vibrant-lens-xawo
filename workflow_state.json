@@ -1,0 +1,53 @@
+{
+  "workflow": {
+    "nodes": [
+      {"id": "input_node", "type": "Input", "label": "Customer & Vehicle Data", "nodeCategory": "input"},
+      {"id": "loan_calc_agent", "type": "Agent", "label": "Loan Calculation Agent", "nodeCategory": "agent"},
+      {"id": "human_review", "type": "Conditional", "label": "Agent Review", "nodeCategory": "conditional"},
+      {"id": "loan_submit_agent", "type": "Agent", "label": "Loan Submission Agent", "nodeCategory": "agent"},
+      {"id": "output_node", "type": "Output", "label": "Application Submitted", "nodeCategory": "end"}
+    ],
+    "edges": [
+      {"source": "input_node", "target": "loan_calc_agent"},
+      {"source": "loan_calc_agent", "target": "human_review"},
+      {"source": "human_review", "target": "loan_submit_agent"},
+      {"source": "loan_submit_agent", "target": "output_node"}
+    ]
+  },
+  "agents": {
+    "loan_calc_agent": {
+      "agent_id": "69a03c4946d462ee9ae7050a",
+      "name": "Loan Calculation Agent",
+      "description": "Processes customer details, vehicle info, and financial data to validate eligibility. Computes max eligible loan (vehicle value minus 30% down payment, capped at 10L), calculates EMI at 8% annual interest for selected tenure, and generates a complete loan offer summary with breakdown.",
+      "model": "gpt-4.1",
+      "provider": "openai",
+      "temperature": 0.2,
+      "top_p": 1,
+      "agent_type": "json",
+      "capabilities": {
+        "image_output": false,
+        "voice": false,
+        "file_output": false
+      }
+    },
+    "loan_submit_agent": {
+      "agent_id": "69a03c49c5e9762927678a57",
+      "name": "Loan Submission Agent",
+      "description": "Takes the reviewed and approved loan offer along with all customer/vehicle data and submits it to the loan processing system. Confirms successful submission and returns a reference/application ID.",
+      "model": "gpt-4.1",
+      "provider": "openai",
+      "temperature": 0.2,
+      "top_p": 1,
+      "agent_type": "json",
+      "capabilities": {
+        "image_output": false,
+        "voice": false,
+        "file_output": false
+      }
+    }
+  },
+  "agent_ids": [
+    "69a03c4946d462ee9ae7050a",
+    "69a03c49c5e9762927678a57"
+  ]
+}
